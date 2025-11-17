@@ -1,1 +1,546 @@
-<html><body>Test content</body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Des&Co. - Back to Marketing Fundamentals</title>
+
+    <!-- GTM HEAD SNIPPET PLACEHOLDER -->
+    <!-- Paste your Google Tag Manager <head> code here -->
+
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            min-height: 100vh;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header / Logo */
+        .header {
+            text-align: center;
+            padding: 40px 0 20px;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a202c;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-ampersand {
+            color: #3182ce;
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 900px;
+            margin: 40px auto;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            color: #1a202c;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .hero h2 {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            color: #4a5568;
+            font-weight: 400;
+            margin-bottom: 30px;
+        }
+
+        /* Two Column Layout for Desktop */
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            max-width: 1000px;
+            margin: 60px auto;
+            align-items: start;
+        }
+
+        /* Benefits List */
+        .benefits {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .benefits h3 {
+            font-size: 1.5rem;
+            color: #1a202c;
+            margin-bottom: 24px;
+            font-weight: 700;
+        }
+
+        .benefits ul {
+            list-style: none;
+        }
+
+        .benefits li {
+            padding: 16px 0;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 1.1rem;
+            color: #2d3748;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .benefits li:last-child {
+            border-bottom: none;
+        }
+
+        .benefits li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #3182ce;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        /* Form Card */
+        .form-card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-top: 4px solid #3182ce;
+        }
+
+        .form-card h3 {
+            font-size: 1.75rem;
+            color: #1a202c;
+            margin-bottom: 24px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #2d3748;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #3182ce;
+            box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.1);
+        }
+
+        .form-group input.error {
+            border-color: #e53e3e;
+        }
+
+        .error-message {
+            color: #e53e3e;
+            font-size: 0.875rem;
+            margin-top: 6px;
+            display: none;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: #3182ce;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background: #2c5aa0;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(49, 130, 206, 0.4);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .submit-btn:disabled {
+            background: #cbd5e0;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .privacy-note {
+            text-align: center;
+            font-size: 0.875rem;
+            color: #718096;
+            margin-top: 16px;
+        }
+
+        .form-error {
+            background: #fed7d7;
+            color: #c53030;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+            text-align: center;
+        }
+
+        .form-error.show {
+            display: block;
+        }
+
+        /* Trust Section */
+        .trust-section {
+            max-width: 800px;
+            margin: 60px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .trust-section h3 {
+            font-size: 1.5rem;
+            color: #1a202c;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .trust-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #4a5568;
+            text-align: center;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #718096;
+            font-size: 0.875rem;
+        }
+
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .content-wrapper {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero h2 {
+                font-size: 1.35rem;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero h2 {
+                font-size: 1.1rem;
+            }
+
+            .form-card,
+            .benefits,
+            .trust-section {
+                padding: 30px 24px;
+            }
+
+            .logo {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- GTM BODY SNIPPET PLACEHOLDER -->
+    <!-- Paste your Google Tag Manager <body> (noscript) code here -->
+
+    <div class="container">
+        <!-- Header / Logo -->
+        <div class="header">
+            <div class="logo">Des<span class="logo-ampersand">&</span>Co.</div>
+        </div>
+
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>Back to Fundamentals: Build the Only Asset You Really Own — Your Email List.</h1>
+            <h2>Des&Co. is the newsletter that helps marketers grow their list and automate email marketing systems using AI — without forgetting the timeless direct-response principles that still work today.</h2>
+        </div>
+
+        <!-- Content Wrapper (Benefits + Form) -->
+        <div class="content-wrapper">
+            <!-- Benefits List -->
+            <div class="benefits">
+                <h3>What You'll Learn:</h3>
+                <ul>
+                    <li>Design email systems that work while you sleep.</li>
+                    <li>Leverage AI to manage newsletters at scale.</li>
+                    <li>Keep your list at the center of your marketing, no matter what platforms change.</li>
+                    <li>Apply proven direct-response tactics that still convert today.</li>
+                    <li>Build the one digital asset you truly control — your email list.</li>
+                </ul>
+            </div>
+
+            <!-- Opt-in Form -->
+            <div class="form-card">
+                <h3>Get the Des&Co. Newsletter in Your Inbox</h3>
+
+                <div id="formError" class="form-error"></div>
+
+                <form id="optinForm" novalidate>
+                    <div class="form-group">
+                        <label for="firstName">First Name *</label>
+                        <input
+                            type="text"
+                            id="firstName"
+                            name="first_name"
+                            placeholder="John"
+                            required
+                        >
+                        <div class="error-message" id="firstNameError">Please enter your first name</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastName">Last Name *</label>
+                        <input
+                            type="text"
+                            id="lastName"
+                            name="name"
+                            placeholder="Doe"
+                            required
+                        >
+                        <div class="error-message" id="lastNameError">Please enter your last name</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="john@example.com"
+                            required
+                        >
+                        <div class="error-message" id="emailError">Please enter a valid email address</div>
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        Join Des&Co. Newsletter
+                    </button>
+
+                    <p class="privacy-note">
+                        We respect your time and inbox. No spam. Unsubscribe anytime.
+                    </p>
+                </form>
+            </div>
+        </div>
+
+        <!-- Trust / Credibility Section -->
+        <div class="trust-section">
+            <h3>Standing on the Shoulders of Giants</h3>
+            <p>
+                Des&Co. brings you the fundamentals from the golden age of direct marketing — the proven principles
+                that built empires before the internet even existed. But we don't stop there. We update these timeless
+                strategies with AI, automation, and modern tools to help you build email as your core asset.
+                No matter how technology evolves or how many platforms come and go, <strong>email is still the address
+                to join anything online</strong>. That's why growing and nurturing your email list must be the focus.
+            </p>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            &copy; 2025 Des&Co. All rights reserved.
+        </div>
+    </div>
+
+    <script>
+        // ============================================
+        // ENCHARGE WEBHOOK CONFIGURATION
+        // ============================================
+        // Replace this URL with your actual Encharge webhook URL
+        const ENCHARGE_WEBHOOK_URL = "https://YOUR_ENCHARGE_WEBHOOK_URL_HERE";
+
+        // ============================================
+        // FORM VALIDATION AND SUBMISSION
+        // ============================================
+
+        const form = document.getElementById('optinForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const formError = document.getElementById('formError');
+
+        // Get form inputs
+        const firstNameInput = document.getElementById('firstName');
+        const lastNameInput = document.getElementById('lastName');
+        const emailInput = document.getElementById('email');
+
+        // Get error message elements
+        const firstNameError = document.getElementById('firstNameError');
+        const lastNameError = document.getElementById('lastNameError');
+        const emailError = document.getElementById('emailError');
+
+        // Email validation regex
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        // Validate individual field
+        function validateField(input, errorElement, validationFn) {
+            const isValid = validationFn(input.value.trim());
+
+            if (!isValid) {
+                input.classList.add('error');
+                errorElement.classList.add('show');
+                return false;
+            } else {
+                input.classList.remove('error');
+                errorElement.classList.remove('show');
+                return true;
+            }
+        }
+
+        // Clear error on input
+        function setupFieldValidation(input, errorElement, validationFn) {
+            input.addEventListener('input', () => {
+                if (input.classList.contains('error')) {
+                    validateField(input, errorElement, validationFn);
+                }
+            });
+
+            input.addEventListener('blur', () => {
+                validateField(input, errorElement, validationFn);
+            });
+        }
+
+        // Setup real-time validation
+        setupFieldValidation(firstNameInput, firstNameError, value => value.length > 0);
+        setupFieldValidation(lastNameInput, lastNameError, value => value.length > 0);
+        setupFieldValidation(emailInput, emailError, value => emailRegex.test(value));
+
+        // Form submission
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // Hide any previous form errors
+            formError.classList.remove('show');
+            formError.textContent = '';
+
+            // Validate all fields
+            const isFirstNameValid = validateField(
+                firstNameInput,
+                firstNameError,
+                value => value.length > 0
+            );
+
+            const isLastNameValid = validateField(
+                lastNameInput,
+                lastNameError,
+                value => value.length > 0
+            );
+
+            const isEmailValid = validateField(
+                emailInput,
+                emailError,
+                value => emailRegex.test(value)
+            );
+
+            // If any validation fails, stop
+            if (!isFirstNameValid || !isLastNameValid || !isEmailValid) {
+                return;
+            }
+
+            // Prepare data for submission
+            const formData = {
+                first_name: firstNameInput.value.trim(),
+                name: lastNameInput.value.trim(),
+                email: emailInput.value.trim()
+            };
+
+            // Disable submit button during submission
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Joining...';
+
+            try {
+                // Send POST request to Encharge webhook
+                const response = await fetch(ENCHARGE_WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Server responded with ${response.status}`);
+                }
+
+                // Success - redirect to thank you page with parameters
+                const params = new URLSearchParams({
+                    first_name: formData.first_name,
+                    name: formData.name
+                });
+
+                window.location.href = `thank-you.html?${params.toString()}`;
+
+            } catch (error) {
+                // Show error message
+                console.error('Form submission error:', error);
+                formError.textContent = 'Oops! Something went wrong. Please try again or contact support.';
+                formError.classList.add('show');
+
+                // Re-enable submit button
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Join Des&Co. Newsletter';
+            }
+        });
+    </script>
+</body>
+</html>

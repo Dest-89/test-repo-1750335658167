@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Des&Co.</title>
+
+    <!-- GTM HEAD SNIPPET PLACEHOLDER -->
+    <!-- Paste your Google Tag Manager <head> code here -->
+
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 800px;
+            width: 100%;
+        }
+
+        /* Header / Logo */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a202c;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-ampersand {
+            color: #3182ce;
+        }
+
+        /* Thank You Card */
+        .thank-you-card {
+            background: white;
+            padding: 60px 50px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-top: 4px solid #3182ce;
+            text-align: center;
+        }
+
+        /* Success Icon */
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: #48bb78;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            animation: scaleIn 0.5s ease-out;
+        }
+
+        .success-icon::after {
+            content: "✓";
+            color: white;
+            font-size: 3rem;
+            font-weight: bold;
+            line-height: 1;
+        }
+
+        @keyframes scaleIn {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Main Headline */
+        .thank-you-card h1 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            color: #1a202c;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .name-highlight {
+            color: #3182ce;
+        }
+
+        /* Subheadline */
+        .thank-you-card h2 {
+            font-size: 1.35rem;
+            line-height: 1.5;
+            color: #4a5568;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        /* Description */
+        .description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #4a5568;
+            margin-bottom: 30px;
+        }
+
+        .description ul {
+            list-style: none;
+            margin: 20px 0;
+            padding: 0;
+        }
+
+        .description li {
+            padding: 12px 0;
+            position: relative;
+            padding-left: 30px;
+            text-align: left;
+        }
+
+        .description li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #3182ce;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            display: inline-block;
+            padding: 16px 40px;
+            background: #3182ce;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            margin: 20px 0;
+        }
+
+        .cta-button:hover {
+            background: #2c5aa0;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(49, 130, 206, 0.4);
+        }
+
+        .cta-button:active {
+            transform: translateY(0);
+        }
+
+        /* Reminder Box */
+        .reminder-box {
+            background: #edf2f7;
+            border-left: 4px solid #3182ce;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 4px;
+        }
+
+        .reminder-box p {
+            font-size: 0.95rem;
+            color: #4a5568;
+            margin: 0;
+            text-align: left;
+        }
+
+        .reminder-box strong {
+            color: #2d3748;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px 20px 0;
+            color: #718096;
+            font-size: 0.875rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 767px) {
+            .thank-you-card {
+                padding: 40px 30px;
+            }
+
+            .thank-you-card h1 {
+                font-size: 2rem;
+            }
+
+            .thank-you-card h2 {
+                font-size: 1.15rem;
+            }
+
+            .description {
+                font-size: 1rem;
+            }
+
+            .logo {
+                font-size: 2rem;
+            }
+
+            .success-icon {
+                width: 70px;
+                height: 70px;
+            }
+
+            .success-icon::after {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- GTM BODY SNIPPET PLACEHOLDER -->
+    <!-- Paste your Google Tag Manager <body> (noscript) code here -->
+
+    <div class="container">
+        <!-- Header / Logo -->
+        <div class="header">
+            <div class="logo">Des<span class="logo-ampersand">&</span>Co.</div>
+        </div>
+
+        <!-- Thank You Card -->
+        <div class="thank-you-card">
+            <!-- Success Icon -->
+            <div class="success-icon"></div>
+
+            <!-- Dynamic Headline (populated by JavaScript) -->
+            <h1 id="mainHeadline">You're in. Welcome to Des&Co.</h1>
+
+            <!-- Subheadline -->
+            <h2>We just locked in your spot on the Des&Co. newsletter.</h2>
+
+            <!-- Description -->
+            <div class="description">
+                <p>Here's what you can expect from us:</p>
+                <ul>
+                    <li>The fundamentals of marketing that never go out of style</li>
+                    <li>How to grow and protect your email list as your most valuable asset</li>
+                    <li>Proven strategies to use AI and automation to run newsletters at scale</li>
+                    <li>Direct-response tactics that still work in the modern age</li>
+                    <li>Real, actionable insights — no fluff</li>
+                </ul>
+            </div>
+
+            <!-- CTA Button (placeholder) -->
+            <a href="#" class="cta-button">Check Your Inbox for Confirmation</a>
+
+            <!-- Reminder Box -->
+            <div class="reminder-box">
+                <p>
+                    <strong>Important:</strong> If you don't see our email in a few minutes,
+                    check your spam or promotions folder. To make sure you never miss an issue,
+                    add our email address to your contacts.
+                </p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            &copy; 2025 Des&Co. All rights reserved.
+        </div>
+    </div>
+
+    <script>
+        // ============================================
+        // DYNAMIC PERSONALIZATION
+        // ============================================
+        // This script reads the first_name and name from URL query parameters
+        // and personalizes the thank you message
+
+        (function() {
+            // Get URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const firstName = urlParams.get('first_name');
+            const lastName = urlParams.get('name');
+
+            // Get the headline element
+            const headlineElement = document.getElementById('mainHeadline');
+
+            // If we have both names, personalize the message
+            if (firstName && lastName) {
+                // Trim any whitespace
+                const cleanFirstName = firstName.trim();
+                const cleanLastName = lastName.trim();
+
+                // Create personalized message
+                headlineElement.innerHTML = `<span class="name-highlight">${cleanFirstName} ${cleanLastName}</span>, you're in. Welcome to Des&Co.`;
+            } else if (firstName) {
+                // If we only have first name, use that
+                const cleanFirstName = firstName.trim();
+                headlineElement.innerHTML = `<span class="name-highlight">${cleanFirstName}</span>, you're in. Welcome to Des&Co.`;
+            }
+            // If no parameters, the default "You're in. Welcome to Des&Co." message is already set in HTML
+
+            // Optional: Log for debugging (remove in production)
+            console.log('Thank you page loaded');
+            console.log('First name:', firstName || 'Not provided');
+            console.log('Last name:', lastName || 'Not provided');
+        })();
+    </script>
+</body>
+</html>
