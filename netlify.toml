@@ -1,0 +1,22 @@
+# Netlify configuration for Des&Co. Newsletter Funnel
+# Deploy this site to Netlify by connecting your GitHub repository
+
+[build]
+  # No build process needed - static HTML files
+  publish = "."
+
+[[redirects]]
+  # Ensure clean URLs work
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = false
+
+[[headers]]
+  # Security headers
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
