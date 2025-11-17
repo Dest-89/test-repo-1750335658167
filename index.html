@@ -713,38 +713,29 @@
             submitBtn.disabled = true;
             submitBtn.textContent = 'Joining...';
 
-            try {
-                // Send POST request to Encharge webhook
-                const response = await fetch(ENCHARGE_WEBHOOK_URL, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(formData)
-                });
+            // Send data to Encharge webhook (fire and forget to avoid CORS issues)
+            fetch(ENCHARGE_WEBHOOK_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            }).catch(error => {
+                // Silently log error but still redirect
+                console.log('Webhook submission:', error);
+            });
 
-                if (!response.ok) {
-                    throw new Error(`Server responded with ${response.status}`);
-                }
+            // Redirect to thank you page immediately with parameters
+            const params = new URLSearchParams({
+                first_name: formData.first_name,
+                name: formData.name
+            });
 
-                // Success - redirect to thank you page with parameters
-                const params = new URLSearchParams({
-                    first_name: formData.first_name,
-                    name: formData.name
-                });
-
+            // Small delay to ensure webhook request is sent
+            setTimeout(() => {
                 window.location.href = `thank-you.html?${params.toString()}`;
-
-            } catch (error) {
-                // Show error message
-                console.error('Form submission error:', error);
-                formError.textContent = 'Oops! Something went wrong. Please try again or contact support.';
-                formError.classList.add('show');
-
-                // Re-enable submit button
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Join Des&Co. Newsletter';
-            }
+            }, 500);
         });
     </script>
 </body>
